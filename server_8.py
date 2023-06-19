@@ -46,7 +46,11 @@ def list_files(directory):
         elif os.path.isdir(entry_path):
             link = f'<a href="{entry}/">{entry}/</a>'
             links.append(link)
-    return "<br>".join(links)
+    
+    arquivos = "<br>".join(links)
+    titulo = f'<head> <title> TP PARA O FLÁVIO </title> </head> <body> <header> TP PARA O FLÁVIO </br></header></body>'
+    pagina = titulo + arquivos
+    return pagina
 
 # Função para tratar as solicitações HTTP
 def handle_request(client_socket, request):
